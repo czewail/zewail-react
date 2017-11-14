@@ -1,17 +1,35 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+import { Provider } from 'react-redux'
+import configureStore, { history } from '../store'
+import { ConnectedRouter } from 'react-router-redux'
+import { PersistGate } from 'redux-persist/es/integration/react'
+
+// 获取 persistor 和 store
+const { persistor, store } = configureStore()
+
+const onBeforeLift = () => {
+  // console.log('before action')
+}
 
 class App extends React.Component {
-  // 渲染组件
+  constructor(props) {
+    super(props)
+  }
+
   render() {
+    // 主页面
     return (
-      <div>Component</div>
+      <Provider store={store}>
+        <PersistGate loading={<div>loading page</div>} onBeforeLift={onBeforeLift} persistor={persistor}>
+          {/* ConnectedRouter 会自动使用Provider里的store */}
+          <ConnectedRouter history={history}>
+            {/* 主页面组件 */}
+            <div>Main Page</div>
+          </ConnectedRouter>
+        </PersistGate>
+      </Provider>
     )
   }
 }
-
-App.propTypes = {}
-
-App.defaultProps = {}
 
 export default App

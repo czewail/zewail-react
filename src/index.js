@@ -2,14 +2,15 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { AppContainer } from 'react-hot-loader'
 
+// 主页面
 import App from './containers/App'
 
 ReactDOM.render(
   <AppContainer>
     <App/>
   </AppContainer>
-  , document.getElementById('app'));
-  
+  , document.getElementById('app'))
+
 // 热更新
 if (module.hot) {
   module.hot.accept('./containers/App', () => {
