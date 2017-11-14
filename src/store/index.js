@@ -42,7 +42,7 @@ export default function configureStore( onComplete = () => {} ){
   const store = createStore(reducers, undefined, compose(
       applyMiddleware(...middleWares),
     ))
-  // 将store白名单中的数据保存到缓存
+  // 将store数据保存到缓存
   const persistor = persistStore(store, null, onComplete)
   // 运行saga
   sagaMiddleware.run(sagas)
