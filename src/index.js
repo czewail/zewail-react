@@ -1,13 +1,15 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { AppContainer } from 'react-hot-loader'
-
+import configureStore from './store'
 // 主页面
 import App from './containers/App'
 
+const stores = configureStore()
+
 ReactDOM.render(
   <AppContainer>
-    <App/>
+    <App stores={stores}/>
   </AppContainer>
   , document.getElementById('app'))
 
@@ -17,7 +19,7 @@ if (module.hot) {
     const NextApp = require('./containers/App').default
     ReactDOM.render(
       <AppContainer>
-        <NextApp/>
+        <NextApp stores={stores}/>
       </AppContainer>,
       document.getElementById('app')
     )

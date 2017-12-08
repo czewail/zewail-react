@@ -1,0 +1,49 @@
+{
+  "parser": "babel-eslint",
+  "extends": [
+    // eslint 推荐规则
+    "eslint:recommended", 
+    // eslint-react 推荐规则
+    "plugin:react/recommended" 
+  ],
+  "env": {
+    "browser": true, // browser 全局变量
+    "node": true, // Node.js 全局变量和 Node.js 作用域
+    "es6": true // 支持除模块外所有 ECMAScript 6 特性（该选项会自动设置 ecmaVersion 解析器选项为 6）
+    // "mocha": true, // 添加所有的 Mocha 测试全局变量
+    // "jest": true, // Jest 全局变量
+    // "jasmine": true // 添加所有的 Jasmine 版本 1.3 和 2.0 的测试全局变量
+  },
+  "rules": {
+    // 不允许未使用的变量，不检测参数
+    "no-unused-vars": ["error", { "args": "none" }],
+    // 换行符必须为unix风格
+    "linebreak-style": ["error", "unix"],
+    // 缩进必须为2个空格
+    "indent": ["error", 2, {
+      // switch case子句缩进2个空格
+      "SwitchCase": 1
+    }],
+    // 强制所有不包含双引号的 JSX 属性值使用双引号
+    "jsx-quotes": ["error", "prefer-double"],
+    // 不检测 props中的属性在 prop-type 是否存在
+    "react/prop-types": [0],
+    // 不检测不安全的target=「blank」
+    "react/jsx-no-target-blank": [0],
+    // 可以直接对state赋值
+    "react/no-direct-mutation-state": [0],
+    // 允许直接返回reactdom render方法的内容
+    "react/no-render-return-value": [0],
+    // 不允许出现分号
+    "semi": ["warn", "never"],
+    // 建议使用 let 或 const 而不是 var
+    "no-var": "warn"
+  },
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "ecmaFeatures": {
+      "jsx": true,
+      "experimentalObjectRestSpread": true
+    }
+  }
+}

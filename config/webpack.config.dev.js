@@ -19,7 +19,6 @@ module.exports = {
     path: BUILD_PATH,
     filename: 'bundle.js',
     //模板、样式、脚本、图片等资源对应的server上的路径
-    // “publicPath”项则被许多Webpack的插件用于在生产模式下更新内嵌到css、html文件里的url值。
     publicPath: "/assets/",
   },
   module: {
@@ -37,9 +36,9 @@ module.exports = {
           {
             loader: 'postcss-loader',
             options: {
-            plugins: (loader) => [
-              require('autoprefixer')(),
-              // require('cssnano')()
+              plugins: (loader) => [
+                require('autoprefixer')(),
+                // require('cssnano')()
               ]
             }
           }
