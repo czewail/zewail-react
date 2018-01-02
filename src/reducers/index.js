@@ -3,14 +3,23 @@ import { routerReducer } from 'react-router-redux'
 import { persistCombineReducers } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
 
-const config = {
-  key: 'root',
-  storage
+const context = require.context('./', true, /\.js$/)
+const keys = context.keys().filter(item => item !== './index.js')
+const reducers = {}
+for (let i = 0; i < keys.length; i += 1) {
+  reducers[keys[i].replace(/^\.\/(.*)\.js$/, "$1").replace(/(\/)/g, "_")] = context(keys[i]).default
 }
 
-// 这里加入其他的reducer
-const reducers = {
-  routing: routerReducer, // 默认引入路由reducer
+export const config = {
+  key: 'root',
+  storage,
+  whitelist: [
+
+  ]
 }
+
 // 合并reducer
-export default persistCombineReducers(config, reducers)
+export default persistCombineReducers(config, {
+  routing: routerReducer, // 默认引入路由reducer
+  ...reducers
+})
