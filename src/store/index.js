@@ -33,8 +33,8 @@ const middleWares = [
 export default function configureStore( onComplete = () => {} ){
   // 生成store
   const store = createStore(reducers, undefined, compose(
-      applyMiddleware(...middleWares),
-    ))
+    applyMiddleware(...middleWares),
+  ))
   // 将store数据保存到缓存
   const persistor = persistStore(store, null, onComplete)
   // 运行saga
