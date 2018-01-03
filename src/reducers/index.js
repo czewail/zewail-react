@@ -14,7 +14,7 @@ export const config = {
   key: 'root',
   storage,
   whitelist: [
-
+    'routing'
   ]
 }
 

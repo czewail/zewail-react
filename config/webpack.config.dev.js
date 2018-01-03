@@ -1,10 +1,10 @@
-const path = require('path');
-const webpack = require('webpack');
+const path = require('path')
+const webpack = require('webpack')
 
-var ROOT_PATH = path.resolve(__dirname);
-var APP_PATH = path.resolve(ROOT_PATH, '../src'); // __dirname 中的src目录，以此类推
-var APP_FILE = path.resolve(APP_PATH, 'index.js'); // 根目录文件app.jsx地址
-var BUILD_PATH = path.resolve(ROOT_PATH, '../dist'); // 发布文件所存放的目录
+const ROOT_PATH = path.resolve(__dirname)
+const APP_PATH = path.resolve(ROOT_PATH, '../src') // __dirname 中的src目录，以此类推
+const APP_FILE = path.resolve(APP_PATH, 'index.js') // 根目录文件app.jsx地址
+const BUILD_PATH = path.resolve(ROOT_PATH, '../dist') // 发布文件所存放的目录
 
 module.exports = {
   entry: [

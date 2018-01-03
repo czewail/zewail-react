@@ -23,8 +23,7 @@ class App extends React.Component {
           {/* ConnectedRouter 会自动使用Provider里的store */}
           <ConnectedRouter history={history}>
             <Switch>
-              <Route path="/user" render={() => <div>123</div>}/>
-              <Route path="/" render={()=><div>4dasdslkjlkjkljkjkljk123123f56</div>}/>
+              <Route path="/" render={() => <div>4dasdslkjlkjkljkjkljk123123f56</div>}/>
               <Redirect to="/" />
             </Switch>
           </ConnectedRouter>

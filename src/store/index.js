@@ -8,13 +8,6 @@ import sagas from '../sagas'
 
 // 创建history
 export const history = createHistory()
-// redux-persist 的配置
-export const config = {
-  // 存入缓存的reducer白名单
-  whitelist: [
-    'routing',
-  ]
-}
 
 // 记录日志的中间件, 正式环境不需要
 const logger = store => next => action => {
