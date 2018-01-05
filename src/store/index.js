@@ -1,10 +1,10 @@
 import { createStore, applyMiddleware, compose } from 'redux'
 import { persistStore } from 'redux-persist'
-import reducers from '../reducers'
+import reducers from '@/reducers'
 import createHistory from 'history/createHashHistory'
 import { routerMiddleware } from 'react-router-redux'
 import createSagaMiddleware from 'redux-saga'
-import sagas from '../sagas'
+import sagas from '@/sagas'
 import logger from 'redux-logger'
 
 // 创建history
