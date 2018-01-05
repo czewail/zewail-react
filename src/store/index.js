@@ -5,19 +5,10 @@ import createHistory from 'history/createHashHistory'
 import { routerMiddleware } from 'react-router-redux'
 import createSagaMiddleware from 'redux-saga'
 import sagas from '../sagas'
+import logger from 'redux-logger'
 
 // 创建history
 export const history = createHistory()
-
-// 记录日志的中间件, 正式环境不需要
-const logger = store => next => action => {
-  /*eslint no-console: 0*/
-  console.log('dispatching', action)
-  const result = next(action)
-  /*eslint no-console: 0*/
-  console.log('next state', store.getState())
-  return result
-}
 
 //创建saga中间件
 const sagaMiddleware = createSagaMiddleware()
