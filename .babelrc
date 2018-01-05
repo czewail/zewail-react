@@ -2,11 +2,11 @@
   "env": {
     "development": {
       "presets" : ["es2015", "stage-0", "react"],
-      "plugins" : ["react-hot-loader/babel", ["transform-runtime", { "polyfill": false }]]
+      "plugins" : ["react-hot-loader/babel", "transform-decorators-legacy", ["transform-runtime", { "polyfill": false }]]
     },
     "production": {
       "presets" : [["es2015", { "modules": false, "loose": true }], "stage-0", "react"],
-      "plugins" : [["transform-runtime", { "polyfill": false }]]
+      "plugins" : ["transform-decorators-legacy", ["transform-runtime", { "polyfill": false }]]
     }
   }
 }

@@ -1,4 +1,4 @@
-import { fork } from 'redux-saga/effects'
+import { fork, all } from 'redux-saga/effects'
 
 const context = require.context('./', true, /\.js$/)
 const keys = context.keys().filter(item => item !== './index.js')
@@ -11,5 +11,5 @@ const sagasForks = sagas.map(saga => fork(saga))
 
 // 根saga
 export default function* rootSaga () {
-  yield sagasForks
+  yield all(sagasForks)
 }
