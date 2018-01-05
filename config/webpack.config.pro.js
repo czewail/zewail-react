@@ -78,5 +78,8 @@ module.exports = {
   ],
   resolve: {
     extensions: ['.js', '.jsx', '.less', '.scss', '.css'], //后缀名自动补全
+    alias: {
+      '@': `${APP_PATH}/`,
+    }
   }
 }
