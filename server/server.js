@@ -1,13 +1,12 @@
-var path = require('path');
-var webpack = require('webpack');
-var webpackDevMiddleware = require('webpack-dev-middleware');
-var webpackHotMiddleware = require('webpack-hot-middleware');
-var config = require('../config/webpack.config.dev.js');
+const webpack = require('webpack')
+const webpackDevMiddleware = require('webpack-dev-middleware')
+const webpackHotMiddleware = require('webpack-hot-middleware')
+const config = require('../config/webpack.config.dev.js')
 
-var app = new (require('express'))();
-var port = 3001;
+const app = new (require('express'))()
+const port = 3001
 
-var compiler = webpack(config);
+const compiler = webpack(config)
 
 
 app.use(webpackDevMiddleware(compiler, {
@@ -17,18 +16,20 @@ app.use(webpackDevMiddleware(compiler, {
   stats: {
     colors: true
   }
-}));
+}))
 
-app.use(webpackHotMiddleware(compiler));
+app.use(webpackHotMiddleware(compiler))
 
 app.get('*', function(req, res) {
-	res.sendFile(__dirname + '/index.html')
-});
+  res.sendFile(__dirname + '/index.html')
+})
 
 app.listen(port, function(error) {
   if (error) {
+    /*eslint no-console: 0*/
     console.error(error)
   } else {
+    /*eslint no-console: 0*/
     console.info("==> 🌎  Listening on port %s. Open up http://localhost:%s/ in your browser.", port, port)
   }
-});
+})
