@@ -2,6 +2,8 @@
 
 整合React全家桶，简化开发前期准备（这并不是一个框架），适用于对react技术栈有一定了解得开发人员使用
 
+使用webpack 4 + react 16
+
 React 15 + webpack 3 请查看V1版本： https://github.com/czewail/zewail-react/tree/v1
 
 #### 整合包含react全家桶包含
@@ -10,12 +12,7 @@ React 15 + webpack 3 请查看V1版本： https://github.com/czewail/zewail-reac
 - redux-saga：redux中间件，用来处理异步方法
 - react-router 4：路由管理
 - redux-persist：redux中间件，用来处理本地存储数据
-
-
-#### 其他相关工具
-
-- webpack 3：打包工具
-- less：css预处理器
+- less: css 预处理
 
 ## 使用
 
