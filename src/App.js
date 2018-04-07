@@ -3,6 +3,7 @@ import { Provider } from 'react-redux'
 import { history } from '@/store'
 import { ConnectedRouter } from 'react-router-redux'
 import { PersistGate } from 'redux-persist/es/integration/react'
+import { hot } from 'react-hot-loader'
 import { Redirect, Switch } from 'react-router-dom'
 import RouteWithSubRoutes from '@/constants/RouteWithSubRoutes'
 import routes from '@/routes'
@@ -38,4 +39,4 @@ class App extends React.Component {
   }
 }
 
-export default App
+export default hot(module)(App)

@@ -8,6 +8,7 @@ const APP_FILE = path.resolve(APP_PATH, 'index.js') // 根目录文件地址
 const BUILD_PATH = path.resolve(ROOT_PATH, '../dist/assets') // 发布文件所存放的目录
 
 module.exports = {
+  mode: 'production',
   entry: APP_FILE,
   output: {
     // 输出目录的配置，模板、样式、脚本、图片等资源的路径配置都相对于它

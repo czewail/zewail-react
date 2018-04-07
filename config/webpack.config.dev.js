@@ -7,6 +7,7 @@ const APP_FILE = path.resolve(APP_PATH, 'index.js') // 根目录文件app.jsx地
 const BUILD_PATH = path.resolve(ROOT_PATH, '../dist') // 发布文件所存放的目录
 
 module.exports = {
+  mode: 'development',
   entry: [
     'react-hot-loader/patch',
     // 这里reload=true的意思是，如果碰到不能hot reload的情况，就整页刷新。

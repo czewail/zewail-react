@@ -2,7 +2,7 @@
 
 整合React全家桶，简化开发前期准备（这并不是一个框架），适用于对react技术栈有一定了解得开发人员使用
 
-支持热更新
+React 15 + webpack 3 请查看V1版本： https://github.com/czewail/zewail-react/tree/v1
 
 #### 整合包含react全家桶包含
 
