@@ -1,13 +1,20 @@
 const webpack = require('webpack')
+const fs = require('fs')
 const webpackDevMiddleware = require('webpack-dev-middleware')
 const webpackHotMiddleware = require('webpack-hot-middleware')
 const config = require('../config/webpack.config.dev.js')
+const cheerio = require('cheerio')
 
 const app = new (require('express'))()
 const port = 3333
 
 const compiler = webpack(config)
 
+
+const htmlString = fs.readFileSync(__dirname + '/index.html')
+const $ = cheerio.load(htmlString)
+
+$('body').append('<script src="/assets/app.js"></script>')
 
 app.use(webpackDevMiddleware(compiler, {
   noInfo: true,
@@ -21,7 +28,7 @@ app.use(webpackDevMiddleware(compiler, {
 app.use(webpackHotMiddleware(compiler))
 
 app.get('*', function(req, res) {
-  res.sendFile(__dirname + '/index.html')
+  res.sendFile($.html())
 })
 
 app.listen(port, function(error) {
